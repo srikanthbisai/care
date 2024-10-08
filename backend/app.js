@@ -51,24 +51,49 @@ const io = new Server(server, {
 // WebRTC signaling setup
 setupWebRTCSignaling(io);
 
+// Preload blogs cache on server start
+const preloadBlogsCache = async () => {
+  const cacheKey = 'blogs_cache';
+  try {
+    console.log('Preloading blogs cache...');
+    const response = await axios.get("https://newsapi.org/v2/everything?q=elderly%20care&pageSize=100&apiKey=6436854ddb794baabca16d5311af927c");
+    const data = response.data;
+    await redis.set(cacheKey, JSON.stringify(data), 'EX', 3600); // Cache for 1 hour
+    console.log('Blogs cache preloaded');
+  } catch (error) {
+    console.error('Error preloading blogs cache:', error.message);
+  }
+};
+
+// Call preload on server start
+preloadBlogsCache();
+
 // Blogs endpoint using Redis caching
 app.get('/blogs', async (req, res) => {
   const cacheKey = 'blogs_cache';
   try {
+    // Check Redis cache
     const cachedData = await redis.get(cacheKey);
     if (cachedData) {
-      console.log('Serving from cache');
+      console.log('Serving blogs from cache');
       return res.send(JSON.parse(cachedData));
     }
 
+    // If cache miss, fetch from external API
+    console.log('Cache miss, fetching data from API...');
+    const start = Date.now(); // Track API response time
     const response = await axios.get("https://newsapi.org/v2/everything?q=elderly%20care&pageSize=100&apiKey=6436854ddb794baabca16d5311af927c");
+    console.log(`API response time: ${Date.now() - start}ms`); // Log API response time
+
     const data = response.data;
 
+    // Cache the response in Redis for 1 hour
     await redis.set(cacheKey, JSON.stringify(data), 'EX', 3600); // Cache for 1 hour
+    console.log('Blogs data cached for 1 hour');
 
     res.send(data);
   } catch (error) {
-    console.error('Error getting Blog data:', error.message);
+    console.error('Error getting blogs data:', error.message);
     res.status(500).send({ error: 'Failed to fetch blog data' });
   }
 });

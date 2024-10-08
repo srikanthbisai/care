@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FcDataRecovery } from "react-icons/fc";
-import { MdHealthAndSafety, MdOutlinePriceCheck } from "react-icons/md";
-import { GiLifeBar } from "react-icons/gi";
 import GeminiComponent from "../components/GeminiApi";
 
 function HomePage() {
@@ -19,7 +16,7 @@ function HomePage() {
   }, []);
 
   return (
-    <div className="homepage_container relative bg-gray-50">
+    <div className="homepage_container relative bg-gray-50 overflow-x-hidden"> {/* Prevent horizontal overflow */}
       {/* Hero Image Section */}
       <div
         data-aos="fade-up"
@@ -34,16 +31,16 @@ function HomePage() {
           <h1 className="text-5xl font-bold font-serif drop-shadow-md">
             Welcome to CareNest
           </h1>
-          <p className="text-xl font-medium text-center font-sans mt-4">
-            A platform to help elderly find the right care
+          <p className=" text-blue-200 text-xl font-medium text-center font-sans mt-4">
+            A platform to help you find the perfect homecare
           </p>
         </div>
       </div>
 
       {/* Benefits Section */}
-      <div className="flex flex-col items-center pt-20 pb-10 benefits_container bg-light-gradient-4">
+      <div className="flex flex-col items-center pt-20 pb-10 benefits_container bg-light-gradient-6">
         <p className="text-4xl font-serif text-center">
-          Benefits of Elder Care At Home
+          Benefits of Home Care
         </p>
         <div className="container flex flex-wrap items-center justify-center mt-6 md:space-x-10 gap-4">
           {[
@@ -81,7 +78,7 @@ function HomePage() {
             <div
               data-aos="fade-up"
               key={index}
-              className="text-black bg-custom-gradient-7 border shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[25vh] rounded-lg transform hover:scale-105 transition-transform duration-300 overflow-y-scroll p-4"
+              className="text-black bg-custom-gradient-7 border shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[25vh] rounded-lg transform hover:scale-105 transition-transform duration-300  p-4"
             >
               <h3 className="text-xl font-bold">{benefit.title}</h3>
               <p className="text-md">{benefit.description}</p>
