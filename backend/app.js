@@ -22,7 +22,7 @@ await mongoose.connect(process.env.MONGODB_URI)
 
 // Enable CORS for both localhost and production frontend
 app.use(cors({
-  origin: ['http://localhost:3000'],  // or the live URL if deployed
+  origin: ['http://localhost:3000', 'https://care-nest.vercel.app'],  // Add your live URL here
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
@@ -56,7 +56,7 @@ const preloadBlogsCache = async () => {
   const cacheKey = 'blogs_cache';
   try {
     console.log('Preloading blogs cache...');
-    const response = await axios.get("https://newsapi.org/v2/everything?q=elderly%20care&pageSize=100&apiKey=6436854ddb794baabca16d5311af927c");
+    const response = await axios.get(`https://newsapi.org/v2/everything?q=elderly%20care&pageSize=100&apiKey=${process.env.NEWS_API_KEY}`);
     const data = response.data;
     await redis.set(cacheKey, JSON.stringify(data), 'EX', 3600); // Cache for 1 hour
     console.log('Blogs cache preloaded');
@@ -82,7 +82,7 @@ app.get('/blogs', async (req, res) => {
     // If cache miss, fetch from external API
     console.log('Cache miss, fetching data from API...');
     const start = Date.now(); // Track API response time
-    const response = await axios.get("https://newsapi.org/v2/everything?q=elderly%20care&pageSize=100&apiKey=6436854ddb794baabca16d5311af927c");
+    const response = await axios.get(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=cures+AND+medications+AND+health&retmode=xml`);
     console.log(`API response time: ${Date.now() - start}ms`); // Log API response time
 
     const data = response.data;

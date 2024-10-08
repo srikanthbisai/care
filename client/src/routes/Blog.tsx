@@ -29,8 +29,8 @@ function Blog() {
     setError(null); // Reset error state
 
     try {
-      const response = await axios.get("http://localhost:8000/blogs");
-      setBlogs(response.data.articles); // Set all blogs at once
+      const response = await axios.get('http://localhost:8000/blogs'); // Make a request to your backend
+      setBlogs(response.data.articles); // Assuming the backend response has the same structure
     } catch (error: any) {
       console.error("Error getting blog data:", error.response?.data || error.message);
       setError("Failed to load blog data. Please try again later.");
@@ -69,7 +69,7 @@ function Blog() {
   };
 
   return (
-    <div className="container mx-auto p-6 relative" >
+    <div className="container mx-auto p-6 relative">
       {error && (
         <div className="text-center mt-8 text-red-500">
           <p>{error}</p>
@@ -77,7 +77,7 @@ function Blog() {
       )}
 
       {loading ? (
-        <div className="text-center mt-8 ">
+        <div className="text-center mt-8">
           <p>Loading...</p> {/* Consider using a spinner or loading animation */}
         </div>
       ) : (
@@ -106,7 +106,7 @@ function Blog() {
         </div>
       )}
 
-      <GeminiComponent/>
+      <GeminiComponent />
     </div>
   );
 }
