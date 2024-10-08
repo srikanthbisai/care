@@ -29,8 +29,9 @@ function Blog() {
     setError(null); // Reset error state
 
     try {
-      const response = await axios.get('http://localhost:8000/blogs'); // Make a request to your backend
-      setBlogs(response.data.articles); // Assuming the backend response has the same structure
+      const apiKey = '4a7222c4341d4c63be78ef72500bca84'; 
+      const response = await axios.get(`https://newsapi.org/v2/everything?q=health&pageSize=100&apiKey=${apiKey}`);
+      setBlogs(response.data.articles); // Set all blogs at once
     } catch (error: any) {
       console.error("Error getting blog data:", error.response?.data || error.message);
       setError("Failed to load blog data. Please try again later.");
