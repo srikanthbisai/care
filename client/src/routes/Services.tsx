@@ -6,8 +6,19 @@ function Services() {
 
 
   const handleSubmit = () => {
-    alert("Service Booked \n You will recieve a callback from us");
-  }
+    const message = "Do you want to confirm the booking ?";
+    
+    // Show confirmation dialog
+    const userConfirmed = window.confirm(message);
+  
+    // Check user's response
+    if (userConfirmed) {
+      alert("Thank you for your confirmation! \n You will recieve a callback shortly"); // Alert if user clicks "Yes"
+    } else {
+      alert("You canceled the booking."); // Alert if user clicks "No"
+    }
+  };
+  
 
   return (
     <div className="min-h-screen relative bg-light-gradient-6">
