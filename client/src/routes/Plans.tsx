@@ -33,14 +33,14 @@ const Plans = () => {
             Empower <span className="font-normal">Basic</span>
           </h3>
           <p className="text-3xl font-semibold mb-4">₹199/month</p>
-          <p className="text-sm text-red-600 mb-6">
+          <p className="text-sm text-gray-600 mb-6">
             *Prices shown are for prepaid annual plans only
           </p>
           <button className="bg-red-500 text-white py-2 px-4 rounded-lg mb-6 w-full">
             Request callback
           </button>
           <h4 className="text-lg font-semibold mb-4">Key Features</h4>
-          <ul className="text-sm space-y-2">
+          <ul className="text-sm space-y-2 text-black font-serif">
             <li>✓ 24/7 Emergency Coordination Access</li>
             <li>✓ Senior Help Desk For Lab Tests & Deliveries</li>
             <li>✓ Access To Verified Healthcare Professionals</li>
@@ -64,14 +64,14 @@ const Plans = () => {
             Empower <span className="font-normal">Advanced</span>
           </h3>
           <p className="text-3xl font-semibold mb-4">₹799/month</p>
-          <p className="text-sm text-red-600 mb-6">
+          <p className="text-sm text-gray-600 mb-6">
             *Prices shown are for prepaid annual plans only
           </p>
           <button className="bg-red-500 text-white py-2 px-4 rounded-lg mb-6 w-full">
             Request callback
           </button>
           <h4 className="text-lg font-semibold mb-4">Key Features</h4>
-          <ul className="text-sm space-y-2">
+          <ul className="text-sm space-y-2 text-black font-serif">
             <li>✓ BLS Emergency Ambulance Coverage (One Per Year)</li>
             <li>✓ Access To Doctor On Call During Emergencies</li>
             <li>✓ Weekly Wellness Check-In Calls By Emoha Daughter</li>
@@ -96,14 +96,14 @@ const Plans = () => {
             Empower <span className="font-normal">Premium</span>
           </h3>
           <p className="text-3xl font-semibold mb-4">₹2299/month</p>
-          <p className="text-sm text-red-600 mb-6">
+          <p className="text-sm text-gray-600 mb-6">
             *Prices shown are for prepaid annual plans only
           </p>
           <button className="bg-red-500 text-white py-2 px-4 rounded-lg mb-6 w-full">
             Request callback
           </button>
           <h4 className="text-lg font-semibold mb-4">Key Features</h4>
-          <ul className="text-sm space-y-2">
+          <ul className="text-sm space-y-2 text-black font-serif">
             <li>✓ Unlimited BLS Emergency Ambulance Coverage</li>
             <li>✓ Unlimited Doctor Access During Emergencies</li>
             <li>✓ Weekly Wellness Check-In Calls By Emoha Daughter</li>

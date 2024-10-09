@@ -67,7 +67,7 @@ function Navbar() {
                   </div>
                 )}
               </div>
-              <Link to="/profile">Health Stats</Link>
+              <Link to="/profile">Stats</Link>
               <Link to="/" onClick={handleLogout}>Logout</Link>
             </>
           ) : (
