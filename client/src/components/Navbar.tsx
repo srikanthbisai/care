@@ -79,7 +79,7 @@ function Navbar() {
         </div>
 
         <div className="sidebar md lg:hidden xl:hidden flex justify-center items-center">
-          <IoMenu onClick={toggleMenu} className="text-3xl cursor-pointer" />
+          <IoMenu onClick={toggleMenu} className="text-3xl cursor-pointer text-blue-200" />
         </div>
       </div>
 
