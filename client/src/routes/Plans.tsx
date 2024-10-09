@@ -17,7 +17,7 @@ const Plans = () => {
       ></div>
 
       {/* Cards Section */}
-      <div className="flex flex-wrap max-md:flex-col max-md:gap-6 lg:gap-10 justify-center items-center w-full mt-24 px-4 md:px-10 lg:px-20">
+      <div className="flex flex-wrap max-md:flex-col justify-center items-center w-full mt-24 px-4 md:px-10 lg:px-20 gap-6 md:gap-8 lg:gap-10">
         {/* Basic Plan */}
         <div
           className={`bg-custom-gradient-8 p-6 rounded-lg shadow-lg z-10 transition-all cursor-pointer duration-1000 ease-out
