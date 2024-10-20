@@ -5,6 +5,7 @@ import Layout from './routes/layout/Layout';
 import RequireAuth from './routes/layout/RequireAuth';
 import React, { Suspense } from 'react';
 import Spinner from './components/Spinner'; // Import the Spinner component
+import "./App.css"
 
 // Lazy loaded components
 const Login = React.lazy(() => import('./routes/Login'));

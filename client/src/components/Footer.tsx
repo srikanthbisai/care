@@ -49,7 +49,7 @@ function Footer() {
   ];
 
   return (
-    <div className="footer_container w-full py-10 pt-10 bg-gray-800 text-orange-500 z-0">
+    <div className="footer_container w-full py-10 pt-10 bg-black text-orange-400 z-0">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center items-start">
         <ListItem title="About Us" items={aboutUsItems} />
         <ListItem title="Support" items={supportItems} />

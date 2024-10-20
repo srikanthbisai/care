@@ -57,8 +57,8 @@ function Register() {
   };
 
   return ( 
-    <div className="login_container h-full flex flex-col justify-center items-center bg-light-gradient-6">
-      <div className="container w-3/4 flex h-full">
+    <div className="h-full flex flex-col justify-center items-center bg-slate-800">
+      <div className="container w-3/4 flex h-full p-10">
         <div className="imageContainer w-full h-1/3">
           <img
             src="/background1.jpg"
@@ -73,10 +73,10 @@ function Register() {
 
         <div className="formContainer w-1/2 flex justify-center items-center">
           <form
-            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md bg-white p-6 rounded-lg shadow-lg"
+            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md p-6 rounded-lg shadow-lg w-1/2"
             onSubmit={handleRegister}
           >
-            <h1 className="font-bold text-2xl text-center">
+            <h1 className="font-bold text-2xl text-center text-white">
               Create an Account
             </h1>
             <input

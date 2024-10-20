@@ -62,8 +62,8 @@ function Login() {
   };
 
   return (
-    <div className="login_container h-full flex flex-col justify-center items-center bg-light-gradient-6">
-      <div className="container w-3/4 flex h-full">
+    <div className="login_container h-full flex flex-col justify-center items-center bg-slate-800 p-6">
+      <div className="container w-3/4 flex h-full p-10">
         <div className="imageContainer w-1/2 h-full">
           <img
             src="care2.png"
@@ -78,10 +78,10 @@ function Login() {
 
         <div className="formContainer w-1/2 flex justify-center items-center">
           <form
-            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md bg-white p-6 rounded-lg shadow-lg"
+            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md  p-6 rounded-lg shadow-lg"
             onSubmit={handleLogin}
           >
-            <h1 className="font-bold text-2xl text-center">
+            <h1 className="font-bold text-2xl text-center text-white">
               Login to Your Account
             </h1>
             <input

@@ -15,7 +15,7 @@ function About() {
   }, []);
 
   return (
-    <div className="about_container">
+    <div className="about_container bg-slate-800">
       {/* Hero Image Section */}
       <div
         data-aos="fade-up"
@@ -30,9 +30,9 @@ function About() {
       </div>
    
 
-    <div className="rounded-md">
-      <h1 className="text-center text-4xl font-bold font-serif tracking-wider p-8">Our Partners</h1>
-       <div className="overflow-hidden py-4 bg-black  text-red-500 " style={{padding:"60px"}}>
+    <div className="rounded-md ">
+      <h1 className="text-center text-2xl font-bold font-serif tracking-wider p-8 text-white">OUR SPONSORS</h1>
+       <div className="overflow-hidden py-4 bg-white text-slate-800 " style={{padding:"60px"}}>
         <Marquee
           velocity={35}
           direction="ltr" 
@@ -76,13 +76,13 @@ function About() {
             />
           </div>
           <div className="textContainer w-full lg:w-1/2 p-4 lg:mt-0 mt-6 lg:space-y-10">
-            <h1 className="text-red-500 lg:text-6xl text-4xl font-serif">
+            <h1 className="text-gray-200 lg:text-6xl text-4xl font-serif ">
               Who We Are
             </h1>
-            <p className="text-wrap text-xl leading-relaxed">
-              Carenest is not just an elder care service; it is a celebration of
+            <p className="text-wrap text-xl leading-relaxed text-white">
+              Carenest is not just a self service; it is a celebration of
               love, respect, and appreciation for the ones who paved the way for
-              us. We are here to provide your parents with support,
+              us. We are here to provide you with support,
               companionship, and professional care, so you can rest easy,
               knowing that they are in loving and capable hands. After all those
               who made us deserve nothing but the best!
@@ -103,7 +103,7 @@ function About() {
             </button>
           </div>
           <p className="text-wrap text-lg text-blue-800 font-bold font-serif">
-            JUNE 2019 A special presentation complimentary with Forbes to Care24
+            JUNE 2019 A special presentation complimentary with Forbes to CareNest
           </p>
           <p className="font-thin">
             Forbes India Marquee, a marketing initiative, is a complimentary

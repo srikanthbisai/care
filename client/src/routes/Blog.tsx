@@ -70,9 +70,9 @@ function Blog() {
   };
 
   return (
-    <div className="container mx-auto p-6 relative">
+    <div className="w-full p-6 relative bg-slate-800">
       {error && (
-        <div className="text-center mt-8 text-red-500">
+        <div className="text-center mt-8 text-red-500 min-h-screen bg-slate-800">
           <p>{error}</p>
         </div>
       )}

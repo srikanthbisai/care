@@ -25,7 +25,7 @@ function HomePage() {
         <img
           src="background1.jpg"
           alt="Hero Background"
-          className="w-full h-full object-cover brightness-75" // Added brightness for contrast
+          className="w-full h-full object-cover brightness-75" // Keep this as is for the hero image
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
           <h1 className="text-5xl font-bold font-serif drop-shadow-md">
@@ -38,8 +38,8 @@ function HomePage() {
       </div>
 
       {/* Benefits Section */}
-      <div className="flex flex-col items-center pt-20 pb-10 benefits_container ">
-        <p className="text-4xl font-serif text-center">
+      <div className="flex flex-col items-center pt-20 pb-10 benefits_container bg-slate-800">
+        <p className="text-4xl font-serif text-center text-red-500">
           Benefits of Home Care
         </p>
         <div className="container flex flex-wrap items-center justify-center mt-6 md:space-x-10 gap-4">
@@ -47,7 +47,7 @@ function HomePage() {
             {
               title: "Faster Recovery",
               description:
-                "In-home elder care services are proven to promote recovery.",
+                "In-home care services are proven to promote recovery.",
               bulletPoints: [
                 "Personalized care plans tailored to individual needs.",
                 "Familiar and comfortable environment for healing.",
@@ -57,7 +57,7 @@ function HomePage() {
             {
               title: "Reduced Health Hazards",
               description:
-                "Assistance for seniors at home reduces instances of hospitalization.",
+                "Assistance at home reduces instances of hospitalization.",
               bulletPoints: [
                 "Regular monitoring of health conditions.",
                 "Immediate response to emergencies.",
@@ -78,13 +78,13 @@ function HomePage() {
             <div
               data-aos="fade-up"
               key={index}
-              className="text-black bg-white border shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[25vh] rounded-lg transform hover:scale-105 transition-transform duration-300 p-4"
+              className="text-white bg-[#E6E6FA] border shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[30vh] rounded-lg transform hover:scale-105 transition-transform duration-300 p-4"
             >
-              <h3 className="text-xl font-bold">{benefit.title}</h3>
-              <p className="text-md">{benefit.description}</p>
+              <h3 className="text-xl font-bold text-green-800">{benefit.title}</h3>
+              <p className="text-md text-black">{benefit.description}</p>
               <ul className="list-disc pl-5 text-sm">
                 {benefit.bulletPoints.map((point, idx) => (
-                  <li key={idx}>{point}</li>
+                  <li key={idx} className="text-black">{point}</li>
                 ))}
               </ul>
             </div>
@@ -102,17 +102,17 @@ function HomePage() {
               <img
                 src="background3.jpg"
                 alt="CareNest Overview"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
+                className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
               />
             </div>
             <div className="textContainer w-full lg:w-1/2 p-6 mt-10 lg:mt-0 lg:ml-10 lg:space-y-6">
               <h1 className="text-red-500 text-3xl lg:text-5xl font-serif">
                 What is CareNest
               </h1>
-              <h3 className="mt-6 text-2xl lg:text-3xl font-bold text-black">
+              <h3 className="mt-6 text-2xl lg:text-3xl font-bold text-white">
                 Your Extended Family
               </h3>
-              <p className="text-wrap text-base lg:text-xl leading-relaxed">
+              <p className="text-wrap text-base lg:text-xl leading-relaxed text-white">
                 We are India's most trusted senior care brand offering holistic
                 care and services at home for individuals 55+ years of age.
               </p>
@@ -133,7 +133,7 @@ function HomePage() {
               <h1 className="text-red-500 text-3xl lg:text-5xl font-serif">
                 Get Expert Care, Right at Home
               </h1>
-              <p className="text-wrap text-base lg:text-xl leading-relaxed mt-6">
+              <p className="text-wrap text-base lg:text-xl leading-relaxed mt-6 text-white font-serif">
                 With age comes an increased risk of falls, chronic conditions,
                 and feelings of isolation. But age also brings a desire to enjoy
                 good health and do the things you’ve always wanted to do.
@@ -148,7 +148,7 @@ function HomePage() {
               <img
                 src="Wellspring8.jpg"
                 alt="CareNest Services"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
+                className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
               />
             </div>
           </div>
@@ -162,14 +162,14 @@ function HomePage() {
               <img
                 src="Elder-care-dubai.webp"
                 alt="CareNest Plans"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
+                className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
               />
             </div>
             <div className="textContainer w-full lg:w-1/2 p-6 mt-10 lg:mt-0 lg:ml-10 lg:space-y-6">
               <h1 className="text-red-500 text-3xl lg:text-5xl font-serif">
                 How Can We Help?
               </h1>
-              <p className="text-wrap text-base lg:text-xl leading-relaxed">
+              <p className="text-wrap text-base lg:text-xl leading-relaxed text-white">
                 Depending on your parents’ level of need, you can choose one of
                 our holistic membership plans to get more comprehensive care and
                 proactive health monitoring. You can add-on plans based on your
