@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Marquee from "react-marquee-slider"; 
+import { FaAmazon, FaApple, FaAtlassian, FaFacebook, FaGoogle, FaMicrosoft, FaSpotify } from "react-icons/fa";
 
 function About() {
   useEffect(() => {
@@ -17,56 +18,13 @@ function About() {
   return (
     <div className="about_container bg-slate-800">
       {/* Hero Image Section */}
-      <div
-        data-aos="fade-up"
-        className="image_container h-[80vh] overflow-hidden relative"
-      >
-        <img
-          src="about.jpg"
-          alt="Hero Background"
-          className="w-full h-full object-cover brightness-75"
-        />
-        
-      </div>
-   
-
-    <div className="rounded-md ">
-      <h1 className="text-center text-2xl font-bold font-serif tracking-wider p-8 text-white">OUR SPONSORS</h1>
-       <div className="overflow-hidden py-4 bg-white text-slate-800 " style={{padding:"60px"}}>
-        <Marquee
-          velocity={35}
-          direction="ltr" 
-          scatterRandomly={false} 
-          resetAfterTries={1} 
-          onInit={() => {}} 
-          onFinish={() => {}} 
-        >
-          {[
-            "Google",
-            "Atlassian",
-            "Microsoft",
-            "Amazon",
-            "Facebook",
-            "Apple",
-            "Netflix",
-            "Spotify",
-            "Tesla",
-            "Adobe",
-          ].map((company, index) => (
-            <span key={index} className="mx-10 font-bold font-serif text-red-600 text-3xl">
-              {company}
-            </span>
-          ))}
-        </Marquee>
-         </div>
-      </div>
 
 
 
       <div className="w-3/4 mx-auto ">
         <div
           data-aos="fade-left"
-          className="carenest flex flex-col lg:flex-row box-border rounded-lg mt-20 lg:space-x-10"
+          className="carenest flex flex-col lg:flex-row box-border rounded-lg pt-20 lg:space-x-10"
         >
           <div className="imageContainer w-full lg:w-1/2 flex items-center">
             <img
@@ -91,9 +49,38 @@ function About() {
         </div>
       </div>
 
-      <div
-        className="testimonialContainer w-3/4 mx-auto flex flex-col lg:flex-row justify-between items-stretch lg:space-x-10 mt-20 space-y-6 lg:space-y-0 pb-10"
-        data-aos="fade-right"
+      <div className="rounded-md bg-slate-800 pt-20">
+        <h1 className="text-center text-2xl font-bold font-serif tracking-wider p-8 text-white">OUR SPONSORS</h1>
+        <div className="overflow-hidden py-4 mx-auto w-3/4 rounded-sm" style={{paddingTop:"30px", paddingBottom:"30px"}}>
+          <Marquee
+            velocity={35}
+            direction="ltr" 
+            scatterRandomly={false} 
+            resetAfterTries={1} 
+            onInit={() => {}} 
+            onFinish={() => {}} 
+          >
+            {[
+              { name: "Google", icon: <FaGoogle className="h-10 w-10 text-orange-500"/>, },
+              { name: "Atlassian", icon: <FaAtlassian className="h-10 w-10 text-orange-500" /> },
+              { name: "Microsoft", icon: <FaMicrosoft className="h-10 w-10 text-orange-500" /> },
+              { name: "Amazon", icon: <FaAmazon className="h-10 w-10 text-orange-500" /> },
+              { name: "Facebook", icon: <FaFacebook className="h-10 w-10 text-orange-500" /> },
+              { name: "Apple", icon: <FaApple className="h-10 w-10 text-orange-500" /> },
+              { name: "Spotify", icon: <FaSpotify className="h-10 w-10 text-orange-500" /> },
+            ].map((company, index) => (
+              <div key={index} className="mx-10 flex items-center text-red-400">
+                {company.icon}
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      </div>
+
+   
+   <div className="flex flex-col pt-20">
+      <div className="testimonialContainer w-3/4 mx-auto flex flex-col lg:flex-row justify-between items-stretch lg:space-x-10 space-y-6 lg:space-y-0 pb-10"
+       data-aos="fade-right"
       >
         <div className="w-full lg:w-1/3 border border-gray-300 p-5 shadow-lg space-y-6 rounded-lg bg-gray-100 flex flex-col">
           <div className="imgContainer flex justify-between items-center">
@@ -147,6 +134,12 @@ function About() {
           </p>
         </div>
       </div>
+
+      </div>
+
+
+
+      
 
       <Footer />
     </div>

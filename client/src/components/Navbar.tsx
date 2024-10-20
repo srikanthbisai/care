@@ -19,7 +19,7 @@ function Navbar() {
   };
 
   return (
-    <div className="relative w-full flex h-20 bg-gray-800 rounded-sm">
+    <div className="relative w-full flex h-20 bg-black rounded-sm">
       <div className="container flex justify-between w-11/12 mx-auto">
         <div className="logo font-bold font-serif text-3xl flex  justify-center items-center text-yellow-500 gap-4">
           <FaHandHoldingHeart className='text-5xl'/>
