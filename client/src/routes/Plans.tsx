@@ -74,7 +74,7 @@ const Plans = () => {
           <ul className="text-sm space-y-2 text-black font-serif">
             <li>✓ BLS Emergency Ambulance Coverage (One Per Year)</li>
             <li>✓ Access To Doctor On Call During Emergencies</li>
-            <li>✓ Weekly Wellness Check-In Calls By Emoha Daughter</li>
+            <li>✓ Weekly Wellness Check-In Calls</li>
             <li>✓ Regular Care Updates To Family</li>
             <li>✓ Annual Lab Tests For 58 Health Parameters</li>
             <li>✓ All Services Included In Basic Plan</li>
@@ -106,7 +106,7 @@ const Plans = () => {
           <ul className="text-sm space-y-2 text-black font-serif">
             <li>✓ Unlimited BLS Emergency Ambulance Coverage</li>
             <li>✓ Unlimited Doctor Access During Emergencies</li>
-            <li>✓ Weekly Wellness Check-In Calls By Emoha Daughter</li>
+            <li>✓ Weekly Wellness Check-In Calls </li>
             <li>✓ Family Care Updates</li>
             <li>✓ Annual Lab Tests For 72 Health Parameters</li>
             <li>✓ All Services Included In Basic Plan</li>

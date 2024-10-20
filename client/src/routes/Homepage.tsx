@@ -38,7 +38,7 @@ function HomePage() {
       </div>
 
       {/* Benefits Section */}
-      <div className="flex flex-col items-center pt-20 pb-10 benefits_container bg-light-gradient-6">
+      <div className="flex flex-col items-center pt-20 pb-10 benefits_container ">
         <p className="text-4xl font-serif text-center">
           Benefits of Home Care
         </p>
@@ -78,7 +78,7 @@ function HomePage() {
             <div
               data-aos="fade-up"
               key={index}
-              className="text-black bg-custom-gradient-7 border shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[25vh] rounded-lg transform hover:scale-105 transition-transform duration-300  p-4"
+              className="text-black bg-white border shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[25vh] rounded-lg transform hover:scale-105 transition-transform duration-300 p-4"
             >
               <h3 className="text-xl font-bold">{benefit.title}</h3>
               <p className="text-md">{benefit.description}</p>

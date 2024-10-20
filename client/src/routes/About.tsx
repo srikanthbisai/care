@@ -1,17 +1,17 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Marquee from "react-marquee-slider"; 
 
 function About() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Adjust animation duration
-      offset: 100, // Starts animation by specified pixels farther before the element enters the viewport
-      once: false, // Set to false to trigger on every scroll up and down
+      duration: 1000,
+      offset: 100, 
+      once: false, 
     });
-    AOS.refresh(); // Ensure AOS is aware of any new elements or content
+    AOS.refresh(); 
   }, []);
 
   return (
@@ -26,12 +26,42 @@ function About() {
           alt="Hero Background"
           className="w-full h-full object-cover brightness-75"
         />
-        <div className="absolute inset-0 flex flex-col justify-center text-white px-5">
-          <p className="text-3xl font-medium hidden xl:flex font-sans mt-4 absolute left-96 top-1/2 transform -translate-y-1/2">
-            A Solution for all your problems.
-          </p>
-        </div>
+        
       </div>
+   
+
+    <div className="rounded-md">
+      <h1 className="text-center text-4xl font-bold font-serif tracking-wider p-8">Our Partners</h1>
+       <div className="overflow-hidden py-4 bg-black  text-red-500 " style={{padding:"60px"}}>
+        <Marquee
+          velocity={35}
+          direction="ltr" 
+          scatterRandomly={false} 
+          resetAfterTries={1} 
+          onInit={() => {}} 
+          onFinish={() => {}} 
+        >
+          {[
+            "Google",
+            "Atlassian",
+            "Microsoft",
+            "Amazon",
+            "Facebook",
+            "Apple",
+            "Netflix",
+            "Spotify",
+            "Tesla",
+            "Adobe",
+          ].map((company, index) => (
+            <span key={index} className="mx-10 font-bold font-serif text-red-600 text-3xl">
+              {company}
+            </span>
+          ))}
+        </Marquee>
+         </div>
+      </div>
+
+
 
       <div className="w-3/4 mx-auto ">
         <div
@@ -49,7 +79,7 @@ function About() {
             <h1 className="text-red-500 lg:text-6xl text-4xl font-serif">
               Who We Are
             </h1>
-            <p className="text-wrap text-xl leading-relaxed ">
+            <p className="text-wrap text-xl leading-relaxed">
               Carenest is not just an elder care service; it is a celebration of
               love, respect, and appreciation for the ones who paved the way for
               us. We are here to provide your parents with support,
@@ -62,7 +92,7 @@ function About() {
       </div>
 
       <div
-        className="testimonialContainer w-3/4 mx-auto flex flex-col lg:flex-row justify-between items-stretch lg:space-x-10 mt-20 space-y-6 lg:space-y-0"
+        className="testimonialContainer w-3/4 mx-auto flex flex-col lg:flex-row justify-between items-stretch lg:space-x-10 mt-20 space-y-6 lg:space-y-0 pb-10"
         data-aos="fade-right"
       >
         <div className="w-full lg:w-1/3 border border-gray-300 p-5 shadow-lg space-y-6 rounded-lg bg-gray-100 flex flex-col">
