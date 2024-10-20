@@ -108,7 +108,7 @@ function About() {
           <p className="font-thin">
             Forbes India Marquee, a marketing initiative, is a complimentary
             supplement for … automation and the rise in health and wellness.
-            Care24 was started in 2014 by IIT Kanpur alumni Vipin Pathak and.
+            CareNest was started in 2014 by IIT Kanpur alumni Vipin Pathak and.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ function About() {
             funds.
           </p>
           <p className="font-thin text-black">
-            Care24 operates in Mumbai and Delhi. It raised $350,000 from India
+            CareNest operates in Mumbai and Delhi. It raised $350,000 from India
             Quotient in 2015 and $4 million from SAIF Partners in 2016 and till
             date has raised $4.5 million.
           </p>
