@@ -21,13 +21,13 @@ function Services() {
   
 
   return (
-    <div className="min-h-screen relative bg-light-gradient-6">
+    <div className="min-h-screen relative bg-slate-800 text-gray-300">
       <div className="container w-3/4 mx-auto p-4">
         {services.map((card, i) => (
           <div key={i}>
             <div className="cardContainer flex justify-between my-6 pb-6">
               <div className="textContainer flex flex-col gap-y-3">
-                <h1 className="text-2xl font-bold">{card.title}</h1>
+                <h1 className="text-2xl font-bold text-yellow-400">{card.title}</h1>
                 <ol className="list-disc pl-5">
                   <li>{card.description.desc1}</li>
                   <li>{card.description.desc2}</li>
@@ -36,7 +36,7 @@ function Services() {
                 </ol>
               </div>
               <div className="buttonContainer">
-                <button className="p-3 rounded-xl text-white bg-red-500" onClick={handleSubmit}>
+                <button className="p-3 rounded-xl text-gray-200 bg-red-500" onClick={handleSubmit}>
                   Book Service
                 </button>
               </div>

@@ -83,12 +83,12 @@ app.get('/blogs', async (req, res) => {
     console.log('Cache miss, fetching data from API...');
     const start = Date.now(); // Track API response time
     const response = await axios.get(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=cures+AND+medications+AND+health&retmode=xml`);
-    console.log(`API response time: ${Date.now() - start}ms`); // Log API response time
+    console.log(`API response time: ${Date.now() - start}ms`); 
 
     const data = response.data;
 
     // Cache the response in Redis for 1 hour
-    await redis.set(cacheKey, JSON.stringify(data), 'EX', 3600); // Cache for 1 hour
+    await redis.set(cacheKey, JSON.stringify(data), 'EX', 3600); 
     console.log('Blogs data cached for 1 hour');
 
     res.send(data);

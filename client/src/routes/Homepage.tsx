@@ -29,14 +29,6 @@ function HomePage() {
           alt="Hero Background"
           className="w-full h-full object-cover brightness-75" // Keep this as is for the hero image
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-          <h1 className="text-5xl font-bold font-serif drop-shadow-md">
-            Welcome to CareNest
-          </h1>
-          <p className=" text-blue-200 text-xl font-medium text-center font-sans mt-4">
-            A platform to help you find the perfect homecare
-          </p>
-        </div>
       </div>
 
    
@@ -108,13 +100,12 @@ function HomePage() {
             <div
               data-aos="fade-up"
               key={index}
-              className="text-white bg-[#E6E6FA] border shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[30vh] rounded-lg transform hover:scale-105 transition-transform duration-300 p-4"
-            >
-              <h3 className="text-xl font-bold text-green-800">{benefit.title}</h3>
-              <p className="text-md text-black">{benefit.description}</p>
+              className=" bg-gray-400 text-white  shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[30vh] rounded-lg transform hover:scale-105 transition-transform duration-300 p-4"        >
+              <h3 className="text-xl font-bold text-slate-200">{benefit.title}</h3>
+              <p className="text-md ">{benefit.description}</p>
               <ul className="list-disc pl-5 text-sm">
                 {benefit.bulletPoints.map((point, idx) => (
-                  <li key={idx} className="text-black">{point}</li>
+                  <li key={idx} className="">{point}</li>
                 ))}
               </ul>
             </div>

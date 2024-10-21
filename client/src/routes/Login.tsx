@@ -96,7 +96,7 @@ function Login() {
               placeholder="Password"
               className="p-3 border border-solid border-teal-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
-            {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+          
             <button
               type="submit"
               className="bg-teal-700 p-3 text-white font-bold w-full rounded-md hover:bg-teal-800 transition duration-300"
@@ -112,7 +112,7 @@ function Login() {
             >
               Login as Guest
             </button>
-
+            {error && <p className="text-red-500 text-sm text-center">{error}</p>}
             <Link to="/register" className="text-center">
               <button className="text-teal-700 font-bold w-full rounded-md hover:text-teal-800 transition duration-300">
                 Don't have an account? Sign Up

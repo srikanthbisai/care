@@ -33,7 +33,7 @@ const GeminiComponent: React.FC = () => {
   };
 
   return (
-    <div className="relative z-50">
+    <div className="relative">
       {!isChatOpen && (
         <button
           className="fixed bottom-4 right-4 bg-gradient-to-br from-custom-blue to-custom-teal hover:bg-purple-600 p-4 rounded-full text-white shadow-lg z-50"
