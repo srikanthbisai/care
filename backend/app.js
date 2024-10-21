@@ -4,32 +4,30 @@ import mongoose from 'mongoose';
 import axios from 'axios';
 import Redis from 'ioredis';
 import dotenv from 'dotenv';
-import { createServer } from 'http'; // Add for socket.io
-import { Server } from 'socket.io'; // Add for socket.io
+import { createServer } from 'http'; 
+import { Server } from 'socket.io'; 
 import authRoute from './routes/auth.route.js';
-import { setupWebRTCSignaling } from './signalling.js'; // Import your signaling setup (WebRTC)
+import { setupWebRTCSignaling } from './signalling.js'; 
+import cron from "node-cron";
 
-// Load environment variables
+
 dotenv.config();
 
 const app = express();
-const server = createServer(app); // Use for socket.io setup
+const server = createServer(app); 
 
-// MongoDB connection
 await mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Database connected'))
   .catch(err => console.error('Error connecting to MongoDB:', err.message));
 
-// Enable CORS for both localhost and production frontend
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://care-nest.vercel.app'],  // Add your live URL here
+  origin: ['http://localhost:3000', 'https://care-nest.vercel.app'],  
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
 
 app.use(express.json());
 
-// Redis setup
 const redis = new Redis({
   host: process.env.REDIS_HOST || 'localhost',
   port: process.env.REDIS_PORT || 6379,
@@ -40,18 +38,7 @@ redis.on('error', (err) => {
   console.error('Redis error:', err.message);
 });
 
-// WebRTC signaling with Socket.io
-const io = new Server(server, {
-  cors: {
-    origin: ['http://localhost:3000', 'https://care-nest.vercel.app'],
-    methods: ['GET', 'POST'],
-  },
-});
 
-// WebRTC signaling setup
-setupWebRTCSignaling(io);
-
-// Preload blogs cache on server start
 const preloadBlogsCache = async () => {
   const cacheKey = 'blogs_cache';
   try {
@@ -65,23 +52,19 @@ const preloadBlogsCache = async () => {
   }
 };
 
-// Call preload on server start
 preloadBlogsCache();
 
-// Blogs endpoint using Redis caching
 app.get('/blogs', async (req, res) => {
   const cacheKey = 'blogs_cache';
   try {
-    // Check Redis cache
     const cachedData = await redis.get(cacheKey);
     if (cachedData) {
       console.log('Serving blogs from cache');
       return res.send(JSON.parse(cachedData));
     }
 
-    // If cache miss, fetch from external API
     console.log('Cache miss, fetching data from API...');
-    const start = Date.now(); // Track API response time
+    const start = Date.now(); 
     const response = await axios.get(`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=cures+AND+medications+AND+health&retmode=xml`);
     console.log(`API response time: ${Date.now() - start}ms`); 
 
@@ -97,6 +80,10 @@ app.get('/blogs', async (req, res) => {
     res.status(500).send({ error: 'Failed to fetch blog data' });
   }
 });
+
+cron.schedule("* * * * *", ()=> {
+  
+})
 
 // Authentication routes
 app.use('/auth', authRoute);
