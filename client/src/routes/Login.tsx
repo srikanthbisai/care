@@ -23,7 +23,6 @@ function Login() {
     const { username, password } = formObject;
 
     try {
-      // Assuming token and user data is returned in response after successful login
       const response = await axios.post(
         "http://localhost:8000/auth/login",
         { username, password },
@@ -31,11 +30,7 @@ function Login() {
       );
 
       const { token, username: loggedInUsername } = response.data;
-
-      // Dispatch Redux action with the user data (username and token)
       dispatch(login({ username: loggedInUsername, token }));
-
-      // Redirect after successful login
       navigate("/");
     } catch (error) {
       setError("Invalid username or password. Please try again.");
@@ -51,11 +46,8 @@ function Login() {
       );
 
       const { token, username } = response.data;
-
-      // Dispatch Redux action with guest user data
       dispatch(login({ username, token }));
-
-      navigate("/"); // Redirect after guest login
+      navigate("/");
     } catch (error) {
       setError("Failed to login as guest. Please try again.");
     }
@@ -63,14 +55,12 @@ function Login() {
 
   return (
     <div className="login_container h-full flex flex-col justify-center items-center bg-slate-800 p-6">
-      <div className="container w-3/4 flex h-full p-10">
+      <div className="container w-full flex h-full p-10">
         <div className="imageContainer w-1/2 h-full">
           <img
             src="care2.png"
-            className={`w-full md:w-full md:h-auto object-cover shadow-xl rounded-xl transition-transform duration-1000 ease-out ${
-              isVisible
-                ? "-translate-x-0 opacity-100"
-                : "-translate-x-full opacity-0"
+            className={`w-full h-full object-cover shadow-xl rounded-xl transition-transform duration-1000 ease-out ${
+              isVisible ? "-translate-x-0 opacity-100" : "-translate-x-full opacity-0"
             } hidden md:block`}
             alt="Login Illustration"
           />
@@ -78,12 +68,13 @@ function Login() {
 
         <div className="formContainer w-1/2 flex justify-center items-center">
           <form
-            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md  p-6 rounded-lg shadow-lg"
+            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md p-6 rounded-lg shadow-lg bg-gray-800 border border-gray-300"
             onSubmit={handleLogin}
+            style={{
+              boxShadow: "0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3)",
+            }}
           >
-            <h1 className="font-bold text-2xl text-center text-white">
-              Login to Your Account
-            </h1>
+            <h1 className="font-bold text-2xl text-center text-white">Login to Your Account</h1>
             <input
               name="username"
               type="text"
@@ -96,15 +87,12 @@ function Login() {
               placeholder="Password"
               className="p-3 border border-solid border-teal-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
             />
-          
             <button
               type="submit"
               className="bg-teal-700 p-3 text-white font-bold w-full rounded-md hover:bg-teal-800 transition duration-300"
             >
               Submit
             </button>
-
-            {/* Guest Login Button */}
             <button
               type="button"
               onClick={handleGuestLogin}
@@ -121,7 +109,6 @@ function Login() {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

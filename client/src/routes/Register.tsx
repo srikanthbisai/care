@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import Footer from "../components/Footer"; // Ensure this is imported if it's used
+import Footer from "../components/Footer";
 
 function Register() {
   const navigate = useNavigate();
@@ -10,14 +10,14 @@ function Register() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100); // Delay for the transition effect
+    const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setError(null); // Reset any previous errors
+    setError(null);
 
     try {
       const formData = new FormData(e.currentTarget);
@@ -30,8 +30,8 @@ function Register() {
 
       if (!username || !email || !password) {
         setError("Please fill in all fields");
-        setIsLoading(false); // Stop loading indicator
-        return; // Prevent form submission
+        setIsLoading(false);
+        return;
       }
 
       const registerUser = await axios.post("http://localhost:8000/auth/register", {
@@ -42,30 +42,25 @@ function Register() {
 
       if (registerUser.status === 201) {
         console.log("User registered successfully");
-        // Optionally, redirect to login page or show success message
         navigate("/login");
       }
 
     } catch (error: any) {
-      setError(
-        error.response?.data?.message || "An error occurred. Please try again."
-      );
+      setError(error.response?.data?.message || "An error occurred. Please try again.");
       console.error(error);
     } finally {
       setIsLoading(false);
     }
   };
 
-  return ( 
-    <div className="h-full flex flex-col justify-center items-center bg-slate-800">
-      <div className="container w-3/4 flex h-full p-10">
-        <div className="imageContainer w-full h-1/3">
+  return (
+    <div className=" min-h-screen flex flex-col justify-center items-center bg-slate-800 p-6">
+      <div className="container w-full flex h-full p-10">
+        <div className="imageContainer w-1/2 h-full">
           <img
-            src="/background1.jpg"
-            className={`w-full md:w-full md:h-1/2 object-contain shadow-2xl rounded-xl transition-transform duration-1000 ease-out ${
-              isVisible
-                ? "-translate-x-0 opacity-100"
-                : "-translate-x-full opacity-0"
+            src="/care2.png"
+            className={`w-full h-full object-cover shadow-2xl rounded-xl transition-transform duration-1000 ease-out ${
+              isVisible ? "-translate-x-0 opacity-100" : "-translate-x-full opacity-0"
             } hidden md:block`}
             alt="Register Illustration"
           />
@@ -73,12 +68,13 @@ function Register() {
 
         <div className="formContainer w-1/2 flex justify-center items-center">
           <form
-            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md p-6 rounded-lg shadow-lg w-1/2"
+            className="flex flex-col gap-6 w-full md:w-2/3 max-w-md p-6 rounded-lg shadow-lg bg-gray-800 border border-gray-300"
             onSubmit={handleRegister}
+            style={{
+              boxShadow: "0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3)",
+            }}
           >
-            <h1 className="font-bold text-2xl text-center text-white">
-              Create an Account
-            </h1>
+            <h1 className="font-bold text-2xl text-center text-white">Create an Account</h1>
             <input
               name="username"
               type="text"
@@ -113,7 +109,6 @@ function Register() {
           </form>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
