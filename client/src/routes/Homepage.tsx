@@ -131,17 +131,17 @@ function HomePage() {
             <div
               data-aos="fade-up"
               key={index}
-              className="bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[30vh] rounded-lg transform hover:scale-105 transition-transform duration-300 p-4 relative overflow-hidden"
+              className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium text-lg font-serif shadow-lg border-gray-200 w-full md:w-1/4 space-y-4 h-[30vh] rounded-lg transform hover:scale-105 transition-transform duration-300 p-4 relative overflow-hidden"
               style={{
                 boxShadow:
-                  "0 0 20px rgba(139, 0, 255, 0.7), 0 0 40px rgba(139, 0, 255, 0.7)",
+                  "0 0 20px rgba(139, 0, 255, 0.7)",
               }}
             >
-              <h3 className="text-xl font-bold text-slate-200">
+              <h3 className="text-xl font-bold text-red-200">
                 {benefit.title}
               </h3>
               <p className="text-md">{benefit.description}</p>
-              <ul className="list-disc pl-5 text-sm">
+              <ul className="list-disc pl-5 text-sm space-y-2 overflow-hidden">
                 {benefit.bulletPoints.map((point, idx) => (
                   <li key={idx} className="">
                     {point}
@@ -168,7 +168,7 @@ function HomePage() {
             </div>
 
             <div className="textContainer w-full lg:w-1/2 p-6 mt-10 lg:mt-0 lg:ml-10 lg:space-y-6">
-              <h1 className="text-red-500 text-3xl lg:text-5xl font-serif">
+              <h1 className="text-3xl lg:text-5xl font-serif text-yellow-500">
                 What is CareNest
               </h1>
               <h3 className="mt-6 text-2xl lg:text-3xl font-bold text-white">
@@ -176,10 +176,10 @@ function HomePage() {
               </h3>
               <p className="text-wrap text-base lg:text-xl leading-relaxed text-white">
                 We are India's most trusted senior care brand offering holistic
-                care and services at home for individuals 55+ years of age.
+                care and services at home for individuals of all age.
               </p>
               <Link to="/about">
-                <button className="p-3 text-base lg:text-xl bg-red-500 text-white rounded-full mt-6 hover:bg-red-600 transition duration-200">
+                <button className="p-3 text-base lg:text-xl bg-white text-black rounded-full mt-6 hover:bg-red-600 transition duration-200">
                   Learn More
                 </button>
               </Link>
@@ -192,7 +192,7 @@ function HomePage() {
             className="carenest flex flex-col lg:flex-row box-border rounded-lg mt-20 lg:space-x-32"
           >
             <div className="textContainer w-full lg:w-1/2 p-6 lg:pr-10">
-              <h1 className="text-red-500 text-3xl lg:text-5xl font-serif">
+              <h1 className="text-yellow-500 text-3xl lg:text-5xl font-serif">
                 Get Expert Care, Right at Home
               </h1>
               <p className="text-wrap text-base lg:text-xl leading-relaxed mt-6 text-white font-serif">
@@ -201,7 +201,7 @@ function HomePage() {
                 good health and do the things you’ve always wanted to do.
               </p>
               <Link to="/services">
-                <button className="p-3 text-base lg:text-xl bg-red-500 text-white rounded-full mt-6 hover:bg-red-600 transition duration-200">
+                <button className="p-3 text-base lg:text-xl bg-white text-black rounded-full mt-6 hover:bg-red-600 transition duration-200">
                   Explore Services
                 </button>
               </Link>
@@ -228,7 +228,7 @@ function HomePage() {
               />
             </div>
             <div className="textContainer w-full lg:w-1/2 p-6 mt-10 lg:mt-0 lg:ml-10 lg:space-y-6">
-              <h1 className="text-red-500 text-3xl lg:text-5xl font-serif">
+              <h1 className="text-yellow-500 text-3xl lg:text-5xl font-serif">
                 How Can We Help?
               </h1>
               <p className="text-wrap text-base lg:text-xl leading-relaxed text-white">
@@ -238,7 +238,7 @@ function HomePage() {
                 specific needs.
               </p>
               <Link to="/plans">
-                <button className="p-3 text-base lg:text-xl bg-red-500 text-white rounded-full mt-6 hover:bg-red-600 transition duration-200">
+                <button className="p-3 text-base lg:text-xl bg-white text-black rounded-full mt-6 hover:bg-red-600 transition duration-200">
                   Explore Plans
                 </button>
               </Link>

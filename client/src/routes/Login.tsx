@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../features/authSlice"; // Import login action
-import Footer from "../components/Footer";
 
 function Login() {
   const navigate = useNavigate();
