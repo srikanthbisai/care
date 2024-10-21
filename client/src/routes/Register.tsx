@@ -53,7 +53,7 @@ function Register() {
   };
 
   return (
-    <div className=" min-h-screen flex flex-col justify-center items-center bg-slate-800 p-6">
+    <div className=" flex flex-col justify-center items-center bg-slate-800 p-6">
       <div className="container w-full flex h-full p-10">
         <div className="imageContainer w-1/2 h-full">
           <img

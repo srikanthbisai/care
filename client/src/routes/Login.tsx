@@ -53,7 +53,7 @@ function Login() {
   };
 
   return (
-    <div className="login_container h-full flex flex-col justify-center items-center bg-slate-800 p-6">
+    <div className="login_container flex flex-col justify-center items-center bg-slate-800 p-6">
       <div className="container w-full flex h-full p-10">
         <div className="imageContainer w-1/2 h-full">
           <img
