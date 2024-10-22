@@ -14,7 +14,7 @@ function Footer() {
 
   function ListItem({ title, items }: { title: string; items: string[] }) {
     return (
-      <div data-aos="fade-up" className="w-full sm:w-1/4 mt-10">
+      <div data-aos="fade-right" className="w-full sm:w-1/4 mt-10">
         <ul className="space-y-4">
           <li className="text-2xl font-bold">{title}</li>
           {items.map((item, index) => (
@@ -54,7 +54,7 @@ function Footer() {
         <ListItem title="About Us" items={aboutUsItems} />
         <ListItem title="Support" items={supportItems} />
         <ListItem title="Terms and Policies" items={termsAndPoliciesItems} />
-        <div data-aos="fade-up" className="w-full sm:w-1/4 mt-10">
+        <div data-aos="fade-right" className="w-full sm:w-1/4 mt-10">
           <ul className="space-y-4">
             <li className="text-2xl font-bold">Get The App</li>
             <li>

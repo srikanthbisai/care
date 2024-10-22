@@ -34,7 +34,7 @@ function About() {
             />
           </div>
           <div className="textContainer w-full lg:w-1/2 p-4 lg:mt-0 mt-6 lg:space-y-10">
-            <h1 className="text-gray-200 lg:text-6xl text-4xl font-serif ">
+            <h1 className="text-gray-200 lg:text-6xl text-4xl font-serif text-neutral-400">
               Who We Are
             </h1>
             <p className="text-wrap text-lg leading-relaxed text-white">
@@ -50,7 +50,7 @@ function About() {
       </div>
 
       <div className="rounded-md bg-slate-800 pt-20">
-        <h1 className="text-center text-2xl font-bold font-serif tracking-wider p-8 text-white">OUR SPONSORS</h1>
+        <h1 className="text-center text-2xl font-bold font-serif tracking-wider p-8 text-blue-500">OUR SPONSORS</h1>
         <div className="overflow-hidden py-4 mx-auto w-3/4 rounded-sm" style={{paddingTop:"30px", paddingBottom:"30px"}}>
           <Marquee
             velocity={35}
