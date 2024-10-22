@@ -23,18 +23,17 @@ function About() {
 
       <div className="w-3/4 mx-auto ">
         <div
-          data-aos="fade-left"
           className="carenest flex flex-col lg:flex-row box-border rounded-lg pt-20 lg:space-x-10"
         >
-          <div className="imageContainer w-full lg:w-1/2 flex items-center">
+          <div className="imageContainer w-full lg:w-1/2 flex items-center" data-aos="fade-right">
             <img
               src="/doctor-patient.webp"
               alt="CareNest Overview"
               className="w-full h-auto object-cover rounded-lg"
             />
           </div>
-          <div className="textContainer w-full lg:w-1/2 p-4 lg:mt-0 mt-6 lg:space-y-10">
-            <h1 className="text-gray-200 lg:text-6xl text-4xl font-serif text-neutral-400">
+          <div className="textContainer w-full lg:w-1/2 p-4 lg:mt-0 mt-6 lg:space-y-10" data-aos="fade-left">
+            <h1 className="lg:text-6xl text-4xl font-serif text-neutral-400">
               Who We Are
             </h1>
             <p className="text-wrap text-lg leading-relaxed text-white">
