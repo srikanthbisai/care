@@ -28,7 +28,7 @@ function About() {
         >
           <div className="imageContainer w-full lg:w-1/2 flex items-center">
             <img
-              src="Elder-care-dubai.webp"
+              src="/doctor-patient.webp"
               alt="CareNest Overview"
               className="w-full h-auto object-cover rounded-lg"
             />
@@ -37,7 +37,7 @@ function About() {
             <h1 className="text-gray-200 lg:text-6xl text-4xl font-serif ">
               Who We Are
             </h1>
-            <p className="text-wrap text-xl leading-relaxed text-white">
+            <p className="text-wrap text-lg leading-relaxed text-white">
               Carenest is not just a self service; it is a celebration of
               love, respect, and appreciation for the ones who paved the way for
               us. We are here to provide you with support,

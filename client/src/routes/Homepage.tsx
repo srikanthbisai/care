@@ -35,7 +35,7 @@ function HomePage() {
         className="image_container h-[80vh] overflow-hidden relative"
       >
         <img
-          src="background1.jpg"
+          src="/medical1.webp"
           alt="Hero Background"
           className="w-full h-full object-cover brightness-75" // Keep this as is for the hero image
         />
@@ -161,7 +161,7 @@ function HomePage() {
           >
             <div className="imageContainer w-full lg:w-1/2 flex items-center">
               <img
-                src="background3.jpg"
+                src="/medical2.webp"
                 alt="CareNest Overview"
                 className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
               />
@@ -208,7 +208,7 @@ function HomePage() {
             </div>
             <div className="imageContainer w-full lg:w-1/2 flex items-center mt-6 lg:mt-0">
               <img
-                src="Wellspring8.jpg"
+                src="/medical3.webp"
                 alt="CareNest Services"
                 className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
               />
@@ -222,7 +222,7 @@ function HomePage() {
           >
             <div className="imageContainer w-full lg:w-1/2 flex items-center">
               <img
-                src="Elder-care-dubai.webp"
+                src="/medical.webp"
                 alt="CareNest Plans"
                 className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
               />

@@ -53,11 +53,11 @@ function Register() {
   };
 
   return (
-    <div className=" flex flex-col justify-center items-center bg-slate-800 p-6">
+    <div className="min-h-svh flex flex-col justify-center items-center bg-slate-800 p-6">
       <div className="container w-full flex h-full p-10">
         <div className="imageContainer w-1/2 h-full">
           <img
-            src="/care2.png"
+            src="/medical.webp"
             className={`w-full h-full object-cover shadow-2xl rounded-xl transition-transform duration-1000 ease-out ${
               isVisible ? "-translate-x-0 opacity-100" : "-translate-x-full opacity-0"
             } hidden md:block`}

@@ -13,7 +13,7 @@ const Plans = () => {
       {/* Background Section */}
       <div
         className="bg-cover bg-center bg-no-repeat h-full w-full absolute top-0 left-0"
-        style={{ backgroundImage: "url('care2.png')", opacity: 0.3 }}
+        style={{ backgroundImage: "url('/doctor-patient.webp')", opacity: 0.3 }}
       ></div>
 
       {/* Cards Section */}
