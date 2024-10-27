@@ -28,8 +28,7 @@ function HomePage() {
   return (
     <div className="homepage_container relative bg-gray-50 overflow-x-hidden">
       {" "}
-      {/* Prevent horizontal overflow */}
-      {/* Hero Image Section */}
+     
       <div
         data-aos="fade-up"
         className="image_container h-[80vh] overflow-hidden relative"
@@ -37,7 +36,7 @@ function HomePage() {
         <img
           src="/medical1.webp"
           alt="Hero Background"
-          className="w-full h-full object-cover brightness-75" // Keep this as is for the hero image
+          className="w-full h-full object-cover brightness-75" //
         />
       </div>
       <div className="rounded-md bg-slate-800">
@@ -163,7 +162,7 @@ function HomePage() {
               <img
                 src="/medical2.webp"
                 alt="CareNest Overview"
-                className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
+                className="w-full h-full object-contain rounded-lg shadow-lg" 
               />
             </div>
 
@@ -224,7 +223,7 @@ function HomePage() {
               <img
                 src="/medical.webp"
                 alt="CareNest Plans"
-                className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
+                className="w-full h-full object-contain rounded-lg shadow-lg" 
               />
             </div>
             <div className="textContainer w-full lg:w-1/2 p-6 mt-10 lg:mt-0 lg:ml-10 lg:space-y-6">
