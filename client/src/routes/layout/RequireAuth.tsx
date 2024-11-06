@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar";
 
 function RequireAuth() {
 
-  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);                // Get the isAuthenticated state from Redux
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);            
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
