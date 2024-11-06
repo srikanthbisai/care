@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Define the shape of the user's stats
 interface UserStats {
   height: number;
   weight: number;
@@ -11,12 +10,10 @@ interface UserStats {
   medicalHistory: string[];
 }
 
-// Define the shape of the stats state, which stores stats for each user
 interface StatsState {
   [userId: string]: UserStats;
 }
 
-// Initial state, with an example user having some stats
 const initialState: StatsState = {
   '123': {
     height: 170,
