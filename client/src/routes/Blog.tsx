@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css"; 
 import { useInView } from "react-intersection-observer";
 import GeminiComponent from "../components/GeminiApi";
 import Spinner from "../components/Spinner";
@@ -41,8 +41,8 @@ function Blog() {
   };
 
   useEffect(() => {
-    fetchBlogs(); // Fetch all blogs on component mount
-  }, []); // Empty dependency array means it runs once when the component mounts
+    fetchBlogs(); 
+  }, []); 
 
   useEffect(() => {
     AOS.init({
@@ -50,9 +50,8 @@ function Blog() {
       easing: "ease-in-out",
       once: true,
     });
-  }, []); // Initialize AOS when component mounts
+  }, []); 
 
-  // Create a component that uses useInView
   const LazyImage = ({ src, alt }: { src: string; alt: string }) => {
     const { ref, inView } = useInView({
       triggerOnce: true,
