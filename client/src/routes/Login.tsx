@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login } from "../features/authSlice"; // Import login action
+import { login } from "../features/authSlice";
 
 function Login() {
   const navigate = useNavigate();
