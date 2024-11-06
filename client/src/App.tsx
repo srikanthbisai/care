@@ -4,10 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './routes/layout/Layout';
 import RequireAuth from './routes/layout/RequireAuth';
 import React, { Suspense } from 'react';
-import Spinner from './components/Spinner'; // Import the Spinner component
+import Spinner from './components/Spinner'; 
 import "./App.css"
 
-// Lazy loaded components
 const Login = React.lazy(() => import('./routes/Login'));
 const Register = React.lazy(() => import('./routes/Register'));
 const Services = React.lazy(() => import('./routes/Services'));
