@@ -8,19 +8,19 @@ import {
   addMedicalHistory,
   removeMedicalHistory,
 } from "../features/statsSlice";
-import BarChart from "../components/BarChart"; // Import the BarChart component
+import BarChart from "../components/BarChart"; 
 import GeminiComponent from "../components/GeminiApi";
 import Footer from "../components/Footer";
 
 const ProfilePage: React.FC = () => {
-  const userId = "123"; // Replace with dynamic userId if needed
+  const userId = "123"; 
   const userStats = useSelector((state: RootState) => state.stats[userId]);
   const dispatch = useDispatch();
 
   const [newHistory, setNewHistory] = useState("");
 
   if (!userStats) {
-    return <div>Loading...</div>; // Handle case where user data is not available
+    return <div>Loading...</div>; 
   }
 
   const handleAddMedicalHistory = () => {
