@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../app/store'; // Import RootState
+import { RootState } from '../app/store'; 
 import { logout } from '../features/authSlice';
 import { IoMenu } from 'react-icons/io5';
 import { useState } from 'react';
@@ -46,21 +46,21 @@ function Navbar() {
                     <Link 
                       to="/doctor" 
                       className="block px-4 py-2 text-black hover:bg-gray-200"
-                      onClick={() => setDropdownOpen(false)} // Close dropdown on selection
+                      onClick={() => setDropdownOpen(false)} 
                     >
                       Doctor
                     </Link>
                     <Link 
                       to="/patient" 
                       className="block px-4 py-2 text-black hover:bg-gray-200"
-                      onClick={() => setDropdownOpen(false)} // Close dropdown on selection
+                      onClick={() => setDropdownOpen(false)}
                     >
                       Patient
                     </Link>
                     <Link 
                       to="/clubs" 
                       className="block px-4 py-2 text-black hover:bg-gray-200"
-                      onClick={() => setDropdownOpen(false)} // Close dropdown on selection
+                      onClick={() => setDropdownOpen(false)} 
                     >
                       Clubs
                     </Link>
