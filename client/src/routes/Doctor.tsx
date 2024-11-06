@@ -9,14 +9,12 @@ const Doctor = () => {
   const socketRef = useRef<any>(null);
 
   useEffect(() => {
-    // Initialize signaling using Socket.io
-    socketRef.current = io('https://carenest-1.onrender.com'); // Your signaling server
+    socketRef.current = io('https://carenest-1.onrender.com'); 
     const pc = new RTCPeerConnection({
       iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
     });
     setPeerConnection(pc);
 
-    // Get local media stream (video and audio)
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((stream) => {
         if (localVideoRef.current) localVideoRef.current.srcObject = stream;
@@ -24,20 +22,17 @@ const Doctor = () => {
       })
       .catch(error => console.error('Error accessing media devices:', error));
 
-    // Handle incoming offer from patient
     socketRef.current.on('offer', async (offer: RTCSessionDescriptionInit) => {
       await pc.setRemoteDescription(new RTCSessionDescription(offer));
       const answer = await pc.createAnswer();
       await pc.setLocalDescription(answer);
-      socketRef.current.emit('answer', answer);  // Send the answer to patient
+      socketRef.current.emit('answer', answer); 
     });
 
-    // Handle incoming ICE candidates
     socketRef.current.on('ice-candidate', async (candidate: RTCIceCandidateInit) => {
       await pc.addIceCandidate(new RTCIceCandidate(candidate));
     });
 
-    // Set the remote video stream when received
     pc.ontrack = (event) => {
       if (remoteVideoRef.current) remoteVideoRef.current.srcObject = event.streams[0];
     };
@@ -54,12 +49,11 @@ const Doctor = () => {
     };
   }, []);
 
-  // For doctors to start the call and generate an offer
   const startCall = async () => {
     if (!peerConnection) return;
     const offer = await peerConnection.createOffer();
     await peerConnection.setLocalDescription(offer);
-    socketRef.current.emit('offer', offer);  // Send offer to the patient
+    socketRef.current.emit('offer', offer);  
   };
 
   return (
