@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "../../app/store"; // Ensure correct path to the store
+import { RootState } from "../../app/store"; 
 import Navbar from "../../components/Navbar";
 
 function RequireAuth() {
@@ -10,7 +10,6 @@ function RequireAuth() {
     return <Navigate to="/login" />;
   }
 
-  // Otherwise, render the protected component with Navbar
   return (
     <div className="layout">
       <div className="navbar">
