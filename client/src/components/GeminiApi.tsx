@@ -8,7 +8,6 @@ const GeminiComponent: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
 
-  // Initialize the API key
   const apiKey = "AIzaSyDbFwxX0WuSLeoIoDGhrOxvMVw8pIgCWIw";
   const genAI = new GoogleGenerativeAI(apiKey);
 
