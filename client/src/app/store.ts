@@ -9,7 +9,6 @@ const persistConfig = {
   storage,
 };
 
-// Combine all reducers
 const rootReducer = combineReducers({
   auth: persistReducer(persistConfig, authReducer), 
   stats: statsReducer, 
