@@ -8,14 +8,12 @@ function Services() {
   const handleSubmit = () => {
     const message = "Do you want to confirm the booking ?";
     
-    // Show confirmation dialog
     const userConfirmed = window.confirm(message);
   
-    // Check user's response
     if (userConfirmed) {
-      alert("Thank you for your confirmation! \n You will recieve a callback shortly"); // Alert if user clicks "Yes"
+      alert("Thank you for your confirmation! \n You will recieve a callback shortly"); 
     } else {
-      alert("You canceled the booking."); // Alert if user clicks "No"
+      alert("You canceled the booking."); 
     }
   };
   
