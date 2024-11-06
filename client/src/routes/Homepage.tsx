@@ -209,7 +209,7 @@ function HomePage() {
               <img
                 src="/medical3.webp"
                 alt="CareNest Services"
-                className="w-full h-full object-contain rounded-lg shadow-lg" // Changed to object-contain
+                className="w-full h-full object-contain rounded-lg shadow-lg" 
               />
             </div>
           </div>
